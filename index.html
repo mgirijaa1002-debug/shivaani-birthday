@@ -32,10 +32,7 @@
       0%   { transform: translateY(-60px) rotate(0deg); opacity: 0.6; }
       100% { transform: translateY(110vh) rotate(360deg); opacity: 0; }
     }
-    .landing-content {
-      position: relative;
-      z-index: 1;
-    }
+    .landing-content { position: relative; z-index: 1; }
     .land-eyebrow {
       font-family: var(--ff-body);
       font-size: 0.7rem;
@@ -85,11 +82,7 @@
       transition: transform 0.2s ease, background 0.2s ease;
       box-shadow: 0 6px 24px rgba(159, 134, 204, 0.3);
     }
-    .btn-yes:hover {
-      background: var(--lavender-dk);
-      color: white;
-      transform: translateY(-3px);
-    }
+    .btn-yes:hover { background: var(--lavender-dk); color: white; transform: translateY(-3px); }
     .btn-no {
       background: transparent;
       color: var(--ink-soft);
@@ -111,7 +104,6 @@
       max-width: 340px;
       line-height: 1.8;
       margin: 0 auto;
-      animation: fadeUp 0.5s ease both;
     }
     .sad-msg.show { display: block; }
     .going-msg {
@@ -120,46 +112,31 @@
       font-style: italic;
       font-size: 1.2rem;
       color: var(--lavender-dk);
-      animation: fadeUp 0.5s ease both;
     }
     .going-msg.show { display: block; }
   </style>
 </head>
 <body>
-
   <div class="petals-bg" id="petals"></div>
-
   <div class="landing-wrap">
     <div class="landing-content">
-
       <p class="land-eyebrow fade-up">a little something from your lil sis 🌸</p>
       <h1 class="land-title fade-up delay-1">Happy Birthday<br>Love!</h1>
       <p class="land-age fade-up delay-2">you're finally 21 ✨</p>
-
-      <p class="land-question fade-up delay-3" id="question">
-        do you want to see your surprise? 🎁
-      </p>
-
+      <p class="land-question fade-up delay-3" id="question">do you want to see your surprise? 🎁</p>
       <div class="btn-row fade-up delay-3" id="btns">
         <button class="btn-yes" onclick="sayYes()">yes, obviously!! 💌</button>
         <button class="btn-no" onclick="sayNo()">no 🙈</button>
       </div>
-
       <p class="sad-msg" id="sadmsg">
         oh... okay then 🥺<br><br>
         just kidding — i know you want to.<br>
         go on, press yes. i made this just for you 🌸
       </p>
-
-      <p class="going-msg" id="goingmsg">
-        yay!! taking you to your surprise... 🌸
-      </p>
-
+      <p class="going-msg" id="goingmsg">yay!! taking you to your surprise... 🌸</p>
     </div>
   </div>
-
   <script>
-    // floating petals
     const container = document.getElementById('petals');
     const emojis = ['🌸', '✨', '🌷', '💜', '🌟', '🎀'];
     for (let i = 0; i < 22; i++) {
@@ -172,22 +149,17 @@
       p.style.animationDelay = (Math.random() * 8) + 's';
       container.appendChild(p);
     }
-
     function sayNo() {
       document.getElementById('sadmsg').classList.add('show');
       document.getElementById('question').textContent = 'really?? 🥺';
     }
-
     function sayYes() {
       document.getElementById('btns').style.display = 'none';
       document.getElementById('sadmsg').classList.remove('show');
       document.getElementById('question').textContent = 'yay!! 🎉';
       document.getElementById('goingmsg').classList.add('show');
-      setTimeout(() => {
-        window.location.href = 'cards.html';
-      }, 1800);
+      setTimeout(() => { window.location.href = 'cards.html'; }, 1800);
     }
   </script>
-
 </body>
 </html>
